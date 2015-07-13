@@ -17,27 +17,27 @@
             {{#each docs}}
               <a
                 href='#{{permalink}}'
-                class='regular block'>
+                class='regular block mt1'>
                 <code>{{name}}</code>
               </a>
               {{#each members.static}}
                 <a
                   href='#{{permalink}}'
-                  class='px1 regular block'>
+                  class='px2 regular block'>
                   <code>.{{name}}</code>
                 </a>
               {{/each}}
               {{#each members.instance}}
                 <a
                   href='#{{permalink}}'
-                  class='px1 regular block'>
+                  class='px2 regular block'>
                   <code>#{{name}}</code>
                 </a>
               {{/each}}
               {{#each events}}
                 <a
                   href='#{{permalink}}'
-                  class='px1 regular block'>
+                  class='px2 regular block'>
                   <code>ⓔ {{name}}</code>
                 </a>
               {{/each}}
@@ -48,12 +48,13 @@
       {{/unless}}
       <div class='sm-col {{#unless options.hideSidebar}} lg-col-9 {{/unless}} flex flex-column'>
         <div class='flex-auto full-width'>
-          <div class='px1'>
-{{#each docs ~}}{{> section}}{{/each}}
+          <div class='px2'>
+            {{#each docs ~}}{{> section}}{{/each}}
           </div>
         </div>
       </div>
     </div>
   </div>
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </body>
 </html>

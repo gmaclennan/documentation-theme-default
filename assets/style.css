@@ -1,6 +1,3 @@
-.documentation a {
-  color: #1184CE;
-}
 
 .container-small {
   max-width: 58rem;
@@ -21,14 +18,6 @@
   font-size: 90%;
 }
 
-.section-indent {
-  border-left: 2px solid #eee;
-}
-
-.bg-cloudy {
-  background: #fafafa;
-}
-
 .force-inline * {
   display:inline;
 }
@@ -37,9 +26,30 @@ section:target {
   background: #fcfbf2;
 }
 
+.documentation a:hover {
+  text-decoration: none;
+}
+
+/*colors*/
+
+.documentation {
+  color: rgba(0,0,0,0.8);
+}
+
+.documentation a {
+  color: #607D8B; 
+}
+
+.bg-cloudy {
+  background-color: rgba(0,0,0,0.04);
+}
+
 .documentation-sidebar a:active {
   background: #fcfbf2;
 }
+
+
+/*font*/
 
 .documentation,
 .documentation h1,
@@ -47,14 +57,67 @@ section:target {
 .documentation h3,
 .documentation h4,
 .documentation h5,
-.documentation h6,
+.documentation h6 {
+    font-family: 'Asap', sans-serif;
+}
+
 .documentation pre,
 .documentation code,
 .documentation samp {
-    font-family: 'Inconsolata', Consolas, 'Source Code Pro', monospace;
+    font-family: 'Inconsolata', Consolas,  monospace;
 }
 
-.documentation td,
+/*content*/
+
+.mb-description code {
+  padding: 0.1rem 0.2rem;
+  font-size: 0.9rem;
+  background-color: rgba(0,0,0,0.06);
+  border-radius: 2px;
+  font-weight: bold;
+}
+
+.section-indent {
+  border-left: 2px solid #eee;
+}
+
+.section-indent h2 {
+  font-size: 1.3rem;
+}
+
+.section-indent section {
+  margin: 2.8rem 0.6rem;
+}
+
+
+/*table style*/
+
+.documentation td {
+    padding: .8rem 1rem;
+}
+
+.documentation td >p {
+  margin: 0;
+}
+
+.documentation tr:nth-child(even) {
+  background-color: rgba(0,0,0,0.02);
+}
+
 .documentation th {
-    padding: .25rem .25rem;
+  padding: 1rem;
+  background-color: rgba(0,0,0,0.06);
+  border: none;
+}
+
+
+/*code sample*/
+
+.documentation pre {
+  background-color: #333333;
+  color:#dfe0e6;
+}
+.example-header{
+  padding: .02rem 1rem;
+  color: rgba(0,0,0,0.3);
 }

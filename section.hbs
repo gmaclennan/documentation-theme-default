@@ -12,22 +12,23 @@
       <a class='fade font-smaller' href='{{{context.github}}}'><code>{{{context.path}}}</code></a>
     </div>
   {{/if}}
-  <h3 class='regular'>
-    <a class='black' href='#{{permalink}}'>
+  <h2 class='regular'>
+    <a href='#{{permalink}}'>
       <code>
         {{name}}<span class='gray'>{{{format_params}}}</span>
       </code>
     </a>
-  </h3>
+  </h2>
+  <div class="mb-description">
   {{{md description}}}
-
+  </div>
   {{#if params}}
     <p>
-      <table class='table-light overflow-hidden bg-cloudy-light'>
+      <table class='table-light overflow-hidden bg-cloudy mt3'>
         <thead>
-          <th class='col-3'>parameter</th>
-          <th class='col-3'>type</th>
-          <th class='col-6'>description</th>
+          <th class='col-2'>Parameter</th>
+          <th class='col-2'>Type</th>
+          <th class='col-8'>Description</th>
         </thead>
         {{#params}}
           <tr>
@@ -59,11 +60,11 @@
 
   {{#if properties}}
     <p>
-      <table class='table-light overflow-hidden bg-cloudy-light'>
+      <table class='table-light overflow-hidden bg-cloudy mt3'>
         <thead>
-          <th class='col-3'>property</th>
-          <th class='col-3'>type</th>
-          <th class='col-6'>description</th>
+          <th class='col-2'>Property</th>
+          <th class='col-2'>Type</th>
+          <th class='col-8'>Description</th>
         </thead>
         {{#properties}}
           <tr>
@@ -94,10 +95,10 @@
 
   {{#if throws}}
       <h4>Throws</h4>
-      <table class='table-light overflow-hidden bg-cloudy-light'>
+      <table class='table-light overflow-hidden bg-cloudy mt3'>
         <thead>
-          <th class='col-3'>exception</th>
-          <th class='col-9'>description</th>
+          <th class='col-3'>Exception</th>
+          <th class='col-9'>Description</th>
         </thead>
         {{#throws}}
           <tr>
@@ -111,14 +112,16 @@
   {{/if}}
 
   {{#if examples}}
-    <h4>Examples</h4>
-{{#each examples ~}}<pre>{{{.}}}</pre>{{/each}}
+
+      <h4>Examples</h4>
+      {{#each examples ~}} <div class="example-header mt2 bg-light-gray font-smaller bold"> JS </div><pre>{{{.}}}</pre>{{/each}}
+
   {{/if}}
 
   {{#if members.static}}
     {{#each members.static}}
       <div class='section-indent'>
-{{> section}}
+        {{> section}}
       </div>
     {{/each}}
   {{/if}}
@@ -126,7 +129,7 @@
   {{#if members.instance}}
     {{#each members.instance}}
       <div class='section-indent'>
-{{> section}}
+        {{> section}}
       </div>
     {{/each}}
   {{/if}}
@@ -134,7 +137,7 @@
   {{#if events}}
     {{#each events}}
       <div class='section-indent'>
-{{> section}}
+        {{> section}}
       </div>
     {{/each}}
   {{/if}}
