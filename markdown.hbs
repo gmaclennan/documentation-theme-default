@@ -1,16 +1,19 @@
-## `{{name}}`
+### `{{name}}`
 
 {{#description}}
 {{inlines .}}
 {{/description}}
 
 {{#if params}}
-### Parameters
+#### Parameters
 
 {{#params}}
-* `{{name}}` **{{format_type type}}** {{format_description description}}{{#default}} (optional, default `{{.}}`){{/default}}
+
+| parameter  | type                 | description           |
+| ---------- | -------------------- | --------------------- |
+| `{{name}}` | {{format_type type}} | {{format_description description}}{{#default}} (optional, default `{{.}}`){{/default}} |
 {{#properties}}
-  * `{{name}}` **{{format_type type}}** {{format_description description}}{{#default}} (optional, default `{{.}}`){{/default}}
+| `{{../name}}.{{name}}` | {{format_type type}} | {{format_description description}}{{#default}} (optional, default `{{.}}`){{/default}} |
 {{/properties}}
 {{/params}}
 {{/if}}
@@ -24,7 +27,7 @@
 {{/if}}
 
 {{#if examples}}
-### Examples
+#### Examples
 
 {{#each examples ~}}
 ```js
